@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-toolbar color="primary">
+    <span>Pets</span>
+
+    <span class="spacer"></span>
+
+    <a  routerLink="/Pets">
+      <span class="material-icons">
+        list
+        </span>
+    </a>
+  </mat-toolbar>
+  <br /> <br />
+
+  <mat-card-subtitle>Nome Cliente</mat-card-subtitle>
+  <mat-card-content><!--input type="text" placeholder="Nome Cliente" [(ngModel)]="petModel.nomeCliente" /-->
+      <mat-select [(ngModel)]="petRequest.idCliente"  (ngModelChange)="onChangeObj($event)" [(value)]="petRequest.idCliente" >
+          <mat-option *ngFor="let cliente of clienteModel$ |async; index as i"
+              [value]="cliente.id" >
+               {{cliente.id}} - {{cliente.nome}}
+          </mat-option>
+      </mat-select>
+  </mat-card-content>
+
+  <mat-card-subtitle>Nome</mat-card-subtitle>
+  <mat-card-content><input type="text" placeholder="Nome" name="nome" [(ngModel)]="petRequest.nome" /></mat-card-content>
+
+  <mat-card-subtitle>Especie</mat-card-subtitle>
+  <mat-card-content><input type="text" placeholder="Especie" name="especie" [(ngModel)]="petRequest.especie" /></mat-card-content>
+
+  <button mat-raised-button style="margin-right: 10px;" color="primary" (click)="alterar()" >Alterar</button>
+  <button mat-raised-button style="margin-left: 10px; color: white; background-color: orangered;"   (click)="cancelar()" >Cancelar</button>
+</mat-card>

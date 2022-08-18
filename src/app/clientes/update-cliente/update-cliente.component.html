@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-toolbar color="primary">
+    <span>Clientes</span>
+
+    <span class="spacer"></span>
+
+    <a routerLink="/Clientes">
+      <span class="material-icons"> list </span>
+    </a>
+  </mat-toolbar>
+  <br />
+  <br />
+
+  <mat-card-subtitle>Nome</mat-card-subtitle>
+  <mat-card-content
+    ><input type="text" placeholder="Nome" [(ngModel)]="clienteModel.nome"
+  /></mat-card-content>
+
+  <mat-card-subtitle>CPF</mat-card-subtitle>
+  <mat-card-content
+    ><input type="text" placeholder="CPF" [(ngModel)]="clienteModel.cpf"
+  /></mat-card-content>
+
+  <mat-card-subtitle>Endereço</mat-card-subtitle>
+  <mat-card-content
+    ><input
+      type="text"
+      placeholder="Endereço"
+      [(ngModel)]="clienteModel.endereco"
+  /></mat-card-content>
+
+  <mat-card-subtitle>Telefone</mat-card-subtitle>
+  <mat-card-content
+    ><input
+      type="text"
+      placeholder="Telefone"
+      [(ngModel)]="clienteModel.telefone"
+  /></mat-card-content>
+
+  <mat-card-subtitle>Celular</mat-card-subtitle>
+  <mat-card-content>
+    <input type="text" placeholder="Celular"
+      [(ngModel)]="clienteModel.celular"/>
+  </mat-card-content>
+
+  <mat-card-subtitle>E-mail</mat-card-subtitle>
+  <mat-card-content>
+      <input type="text" placeholder="E-mail" [(ngModel)]="clienteModel.email"/>
+  </mat-card-content>
+
+  <button mat-raised-button style="margin-right: 10px;" color="primary" (click)="editar()"  >Alterar</button>
+  <button mat-raised-button style="margin-left: 10px; color: white; background-color: orangered;"   (click)="cancelar()" >Cancelar</button>
+</mat-card>
