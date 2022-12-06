@@ -22,7 +22,7 @@ export class ClienteService {
 
   list(){
 
-   return this.httpClient.get<ClienteModel[]>(this.API2)
+   return this.httpClient.get<ClienteModel[]>(this.API2+'/lista')
       .pipe(
         first(),
         delay(2000),
