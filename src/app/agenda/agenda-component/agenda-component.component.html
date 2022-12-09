@@ -1,15 +1,22 @@
-
 <br /><br />
-<h2> <p style="text-align: center;" >   Agendamentos </p> </h2> <br /><br />
+<h2>
+  <p style="text-align: center;"> Agendamentos </p>
+</h2> <br /><br />
 
+<div *ngIf="agendas$ |async as agendas ; else carregando">
 
-<mat-grid-list cols="2" rowHeight="50px" gutterSize="5px">
-  <mat-grid-tile *ngFor="let card of cards">
-    <mat-card class="my-card">
-      <mat-card-title> {{ card.titulo }}</mat-card-title>
-      <mat-card-content>{{ card.conteudo }}</mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
-
-
+  <mat-grid-list cols="2" rowHeight="50px" gutterSize="5px">
+  
+    <mat-grid-tile *ngFor="let agenda of agendas">
+      <mat-card class="my-card">
+        <mat-card-title> {{ agenda.dataAgendamento }}</mat-card-title>
+        <mat-card-content>{{ agenda.idCliente }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #carregando >
+  <div class="carregando-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
