@@ -25,7 +25,8 @@ export class UpdatePetComponent implements OnInit {
     idCliente:0,
     nomeCliente:'',
     nome:'',
-    especie:''
+    especie:'',
+    raca:''
   }
 
 
@@ -33,7 +34,8 @@ export class UpdatePetComponent implements OnInit {
     id:0,
     idCliente:0,
     nome:'',
-    especie:''
+    especie:'',
+    raca:''
   }
 
   clienteModel:ClienteModel = {

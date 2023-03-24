@@ -4,6 +4,7 @@ export interface PetModel {
   nomeCliente:string;
   nome:string;
   especie:string;
+  raca:string;
 }
 
 
@@ -13,5 +14,6 @@ export interface PetModelRequest {
   idCliente?:number;
   nome:string;
   especie:string;
+  raca:string;
 }
 

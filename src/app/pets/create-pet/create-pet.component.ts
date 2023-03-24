@@ -21,13 +21,15 @@ export class CreatePetComponent implements OnInit {
     //idCliente: 0,
     nomeCliente:'',
     nome:'',
-    especie: ''
+    especie: '',
+    raca:''
   };
 
   petModelRequest:PetModelRequest = {
     idCliente: 0,
     nome: '',
     especie: '',
+    raca:''
   };
 
   idTemp:number = 0;
