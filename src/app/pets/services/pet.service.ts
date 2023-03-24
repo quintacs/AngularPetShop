@@ -30,7 +30,8 @@ export class PetService {
   }
 
   listClientes(){
-     return this.httpClient.get<ClienteModel[]>(this.APIClientes);
+    this.api = this.APIClientes+'/lista';
+     return this.httpClient.get<ClienteModel[]>(this.api);
   }
 
   salvar(petModelRequest:PetModelRequest):Observable<PetModel>{

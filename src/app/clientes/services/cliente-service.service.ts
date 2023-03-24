@@ -21,8 +21,8 @@ export class ClienteService {
   }
 
   list(){
-
-   return this.httpClient.get<ClienteModel[]>(this.API2+'/lista')
+    this.api = this.API2+'/lista';
+   return this.httpClient.get<ClienteModel[]>(this.api)
       .pipe(
         first(),
         delay(2000),
